@@ -1,0 +1,147 @@
+.rccs {
+  width: 360px;
+  position: absolute;
+  top: 90px;
+  left: 25%;
+  right: 25%;
+  z-index: 1;
+}
+
+.rccs__card {
+  height: 220px;
+  width: 360px;
+}
+
+.rccs__chip {
+  background-image: url("../assets/images/chip.png");
+}
+
+/* .rccs__card--unknown > div {
+  background-image: url('../assets/images/6.jpeg');
+  background-size: contain;
+} */
+
+.rccs__card__background {
+  transition: none;
+  left: -22%;
+  background-image: url("../assets/images/6.jpeg");
+  background-size: contain;
+}
+
+.rccs__card--unknown .rccs__issuer {
+  background-size: 50%;
+  background-image: url("../assets/images/visa.png");
+  visibility: visible;
+}
+
+.rccs__card--visa .rccs__card__background,
+.rccs__card--visaelectron .rccs__card__background {
+  background-image: url("../assets/images/6.jpeg");
+  background-size: contain;
+}
+
+.rccs__card--maestro .rccs__card__background,
+.rccs__card--mastercard .rccs__card__background {
+  background-image: url("../assets/images/6.jpeg");
+  background-size: contain;
+}
+
+.rccs__card--discover .rccs__card__background {
+  background-image: url("../assets/images/6.jpeg");
+  background-size: contain;
+}
+
+.rccs__card--maestro > div,
+.rccs__card--mastercard > div {
+  color: white;
+}
+
+.rccs__card--discover > div {
+  color: white;
+}
+
+.rccs__card--visa .rccs__issuer {
+  background-image: url("../assets/images/visa.png");
+}
+
+.rccs__card--mastercard .rccs__issuer {
+  background-image: url("../assets/images/mastercard.png");
+  height: 18%;
+}
+
+.rccs__card--discover .rccs__issuer {
+  background-image: url("../assets/images/discover.png");
+  width: 26%;
+}
+
+.rccs__card--visa .rccs__issuer,
+.rccs__card--visaelectron .rccs__issuer {
+  background-size: 50%;
+}
+
+.rccs__signature {
+  background: white;
+  width: 90%;
+  top: 42%;
+  border-radius: 4px;
+}
+
+.rccs__cvc {
+  left: 82%;
+  top: 48%;
+}
+
+.rccs__card--back .rccs__issuer {
+  left: 85%;
+}
+
+.rccs__signature:after {
+  content: "CVV";
+  position: absolute;
+  color: white;
+  top: -20px;
+  right: 2px;
+  font-size: 13px;
+}
+
+.rccs__number.rccs--focused.rccs--filled {
+  border: 1px solid white;
+  padding: 2px 12px;
+  border-radius: 4px;
+}
+
+.rccs__expiry.rccs--focused.rccs--filled {
+  border: 1px solid white;
+  padding: 7px;
+  border-radius: 4px;
+}
+
+.rccs__name.rccs--focused {
+  border: 1px solid white;
+  padding: 2px 12px;
+  border-radius: 4px;
+  padding-top: 20px;
+}
+
+.rccs__expiry {
+  bottom: 8%;
+}
+
+.rccs__name {
+  bottom: 4%;
+  height: 20%;
+  font-size: 16px;
+  padding-top: 20px;
+}
+
+.rccs__name:before {
+  content: "Card Holder";
+  top: 6px;
+  position: absolute;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.rccs__number {
+  font-size: 22px;
+}
