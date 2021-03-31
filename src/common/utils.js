@@ -10,8 +10,6 @@ export function formatCreditCardNumber(value) {
   }
 
   const issuer = Payment.fns.cardType(value);
-  console.log("value----", value);
-  console.log("issuer----", issuer);
   const clearValue = clearNumber(value);
   let nextValue;
 
@@ -29,11 +27,6 @@ export function formatCreditCardNumber(value) {
       )} ${clearValue.slice(10, 14)}`;
       break;
     default:
-      // nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
-      //   4,
-      //   8
-      // )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 19)}`;
-
       nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
         4,
         8
@@ -45,15 +38,8 @@ export function formatCreditCardNumber(value) {
 }
 
 export function formatCVC(value, number) {
-  console.log("value", value);
-  // console.log("allValues", allValues);
   const clearValue = clearNumber(value);
   let maxLength = 4;
-
-  // if (allValues.number) {
-  //   const issuer = Payment.fns.cardType(allValues.number);
-  //   maxLength = issuer === "amex" ? 4 : 3;
-  // }
 
   if (number) {
     const issuer = Payment.fns.cardType(number);
@@ -66,14 +52,8 @@ export function formatCVC(value, number) {
   return clearValue.slice(0, maxLength);
 }
 
-export function formatExpirationDate(value) {
-  const clearValue = clearNumber(value);
-
-  if (clearValue.length >= 3) {
-    return `${clearValue.slice(0, 2)}/${clearValue.slice(2, 4)}`;
-  }
-
-  return clearValue;
+export function formatExpirationDate(month, year) {
+  return `${month}/${year}`;
 }
 
 export function formatFormData(data) {
